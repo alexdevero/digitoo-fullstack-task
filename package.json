@@ -1,0 +1,84 @@
+{
+  "name": "scramblies-challenge",
+  "version": "0.0.1",
+  "description": "Scramblies challenge.",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdevero/scramblies-challenge.git"
+  },
+  "proxy": "http://localhost:3001",
+  "homepage": ".",
+  "bugs": {
+    "url": "https://github.com/alexdevero/scramblies-challenge/issues"
+  },
+  "author": {
+    "name": "Alex Devero",
+    "url": "https://alexdevero.com/"
+  },
+  "keywords": [
+    "app",
+    "express",
+    "javascript",
+    "react",
+    "reactjs"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0",
+    "yarn": ">=1.15.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "eject-client": "react-scripts eject",
+    "start-server": "nodemon server/app.js",
+    "start-client": "react-scripts start",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "test-client": "react-scripts test"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "compression": "1.7.4",
+    "cookie-parser": "1.4.5",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "helmet": "4.4.1",
+    "html-sanitize": "1.1.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.16",
+    "@babel/plugin-transform-runtime": "7.12.15",
+    "@babel/preset-env": "7.12.16",
+    "@babel/register": "7.12.13",
+    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/react": "11.2.5",
+    "@testing-library/user-event": "12.7.0",
+    "@types/jest": "26.0.20",
+    "@types/node": "14.14.27",
+    "@types/react": "17.0.1",
+    "@types/react-dom": "17.0.0",
+    "@typescript-eslint/parser": "4.15.0",
+    "concurrently": "5.3.0",
+    "eslint": "7.19.0",
+    "nodemon": "2.0.7",
+    "react-scripts": "4.0.2",
+    "typescript": "4.1.5",
+    "web-vitals": "0.2.4"
+  }
+}
