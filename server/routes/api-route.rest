@@ -1,0 +1,41 @@
+# Test variation of strings - true
+POST http://localhost:5000/api/
+Content-Type: application/json
+
+{
+  "str1": "rekqodlw",
+  "str2": "world"
+}
+
+###
+
+# Test variation of strings - true
+POST http://localhost:5000/api/
+Content-Type: application/json
+
+{
+  "str1": "cedewaraaossoqqyt",
+  "str2": "codewars"
+}
+
+###
+
+# Test variation of strings - false
+POST http://localhost:5000/api/
+Content-Type: application/json
+
+{
+  "str1": "katas",
+  "str2": "steak"
+}
+
+###
+
+# Test variation of strings - false
+POST http://localhost:5000/api/
+Content-Type: application/json
+
+{
+  "str1": "foo",
+  "str2": "fof"
+}
