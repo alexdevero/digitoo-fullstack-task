@@ -1,0 +1,65 @@
+# Development folders and files #
+#################################
+node_modules/
+.env.*
+
+# Folder config file #
+######################
+Desktop.ini
+
+# Folders for inspiration & notes #
+###################################
+__ignore__/
+
+# Log files & folders #
+#######################
+logs/
+/.pnp
+*.log
+npm-debug.log*
+.npm
+.pnp.js
+
+# envs #
+########
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Photoshop & Illustrator files #
+#################################
+*.ai
+*.eps
+*.psd
+
+# Production #
+##############
+build/
+
+# Testing #
+###########
+/coverage
+
+# Windows & Mac file caches #
+#############################
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Windows shortcuts #
+#####################
+*.lnk
