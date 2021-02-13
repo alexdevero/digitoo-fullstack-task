@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction } from 'react'
-
 interface FormInputUI {
   inputId: string;
   inputLabel: string;
-  handleInputChange: Dispatch<SetStateAction<string>>;
+  inputType: 'str1' | 'str2';
+  handleInputChange: (type: 'str1' | 'str2', value: string) => void;
 }
 
 export const FormInput = (props: FormInputUI) => (
@@ -14,7 +13,7 @@ export const FormInput = (props: FormInputUI) => (
       type="text"
       className="form-control"
       id={props.inputId}
-      onChange={(event) => props.handleInputChange(event.currentTarget.value)}
+      onChange={(event) => props.handleInputChange(props.inputType, event.currentTarget.value)}
     />
   </div>
 )

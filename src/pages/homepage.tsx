@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import sanitizeHtml from 'sanitize-html'
 
 import { Header } from './../components/header'
 import { FormInput } from './../components/form-input'
@@ -13,6 +14,15 @@ export const Homepage = () => {
   const [string2, setString2] = useState('')
   const [message, setMessage] = useState('')
   const [isError, setIsError] = useState(false)
+
+  const handleInput = (type: 'str1' | 'str2', value: string) => {
+    if (type === 'str1') {
+      setString1(sanitizeHtml(value))
+    } else {
+      setString2(sanitizeHtml(value))
+    }
+    console.log(string1, string2)
+  }
 
   const handleStringCheck = () => {
     if (string1.length > 0 && string2.length > 0) {
@@ -50,11 +60,21 @@ export const Homepage = () => {
           <div className="col-sm-10 col-lg-8">
             <div className="row">
               <div className="col-md-6">
-                <FormInput inputLabel="String 1" inputId="str1" handleInputChange={setString1} />
+                <FormInput
+                  inputLabel="String 1"
+                  inputType="str1"
+                  inputId="str1"
+                  handleInputChange={handleInput}
+                />
               </div>
 
               <div className="col-md-6">
-                <FormInput inputLabel="String 2" inputId="str2" handleInputChange={setString2} />
+                <FormInput
+                  inputLabel="String 2"
+                  inputType="str2"
+                  inputId="str2"
+                  handleInputChange={handleInput}
+                />
               </div>
             </div>
 
