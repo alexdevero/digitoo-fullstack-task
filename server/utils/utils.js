@@ -6,7 +6,31 @@ function isScramble(str1, str2) {
 
   if (str1 === str2) return true
 
-  return resultArr
+  const string1CharsArr = str1.split('')
+  const string2CharsArr = str2.split('')
+
+  string1CharsArr.sort()
+  string2CharsArr.sort()
+
+  const charMap = {}
+
+  string1CharsArr.forEach(char => {
+    if (char in charMap) {
+      charMap[char] += 1
+    } else {
+      charMap[char] = 1
+    }
+  })
+
+  string2CharsArr.forEach(char => {
+    if (char in charMap) {
+      charMap[char] -= 1
+    } else {
+      charMap[char] = -1
+    }
+  })
+
+  return Object.values(charMap).indexOf(-1) === -1
 }
 
 module.exports = isScramble
