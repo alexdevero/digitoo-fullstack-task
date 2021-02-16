@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header>
+  <nav
+    className="navbar py-3"
+  >
+    <div
+      className="container justify-content-center"
+    >
+      Scramblies challenge
+    </div>
+  </nav>
+</header>
+`;

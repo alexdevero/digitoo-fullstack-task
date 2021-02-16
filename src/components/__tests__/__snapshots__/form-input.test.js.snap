@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form input renders correctly 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="small"
+    htmlFor="str1"
+  >
+    String 1
+  </label>
+  <input
+    className="form-control"
+    id="str1"
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;
