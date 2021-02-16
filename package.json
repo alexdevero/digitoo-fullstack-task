@@ -47,6 +47,7 @@
     "start-server": "nodemon server/app.js",
     "start-client": "react-scripts start",
     "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "jest-update-snapshots": "jest --updateSnapshot",
     "test-client": "react-scripts test",
     "test": "jest"
   },
