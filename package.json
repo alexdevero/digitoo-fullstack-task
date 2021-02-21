@@ -46,7 +46,9 @@
     "eject-client": "react-scripts eject",
     "start-server": "nodemon server/app.js",
     "start-client": "react-scripts start",
-    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start-nest": "cd nest && npm run start",
+    "start:with-express": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start:with-nest": "concurrently \"npm run start-nest\" \"npm run start-client\"",
     "jest-update-snapshots": "jest --updateSnapshot",
     "test-client": "react-scripts test",
     "test": "jest"
