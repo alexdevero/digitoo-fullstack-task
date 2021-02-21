@@ -63,3 +63,7 @@ ehthumbs.db
 # Windows shortcuts #
 #####################
 *.lnk
+
+# Nest output #
+###############
+nest/dist/
