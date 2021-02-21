@@ -9,11 +9,10 @@ router.post('/', async (req, res) => {
     const result = isScramble(req.body.str1, req.body.str2)
 
     res.status(200).json({
-      matches: !result,
-      message: result ? 'Portion of "str1" characters can be rearranged to match "str2".' : 'Sorry, portion of "str1" characters can\'t be rearranged to match "str2".'
+      message: result
     })
   } else {
-    res.status(500).json({ message: 'Please specify string 1 and string 2.' })
+    res.status(500).json({ message: 'There was an error.' })
   }
 })
 
