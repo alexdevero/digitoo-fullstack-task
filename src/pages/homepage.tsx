@@ -5,15 +5,19 @@ import { Header } from './../components/header'
 import { FormInput } from './../components/form-input'
 
 interface resJSONUI {
-  message: string;
-  matches: boolean;
+  message: boolean;
+}
+
+const texts = {
+  passed: 'Portion of "str1" characters can be rearranged to match "str2".',
+  failed: 'Sorry, portion of "str1" characters can\'t be rearranged to match "str2".'
 }
 
 export const Homepage = () => {
   const [string1, setString1] = useState('')
   const [string2, setString2] = useState('')
-  const [message, setMessage] = useState('')
-  const [isError, setIsError] = useState(false)
+  const [isScramble, setIsScramble] = useState<null | boolean>(null)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleInput = (type: 'str1' | 'str2', value: string) => {
     if (type === 'str1') {
@@ -21,12 +25,12 @@ export const Homepage = () => {
     } else {
       setString2(sanitizeHtml(value))
     }
-    console.log(string1, string2)
   }
 
   const handleStringCheck = () => {
     if (string1.length > 0 && string2.length > 0) {
-      setMessage('')
+      setIsScramble(null)
+      setErrorMessage('')
 
       fetch('http://localhost:3001/api/', {
         method: 'POST',
@@ -41,13 +45,12 @@ export const Homepage = () => {
       })
         .then(response => response.json())
         .then((json: resJSONUI) => {
-          setMessage(json.message)
-          setIsError(json.matches)
+          setIsScramble(json.message)
         })
-        .catch(err => setMessage(err))
+        .catch(err => setIsScramble(err))
     } else {
-      setIsError(true)
-      setMessage('Please specify both strings to check.')
+      setIsScramble(null)
+      setErrorMessage('Please specify both strings to check.')
     }
   }
 
@@ -78,7 +81,17 @@ export const Homepage = () => {
               </div>
             </div>
 
-            {(message && message.length > 1) && <div className={`result mt-2 mb-3 text-center ${isError ? 'text-danger' : 'text-success'}`}>{message}</div>}
+            {(isScramble !== null) && (
+              <div className={`result mt-2 mb-3 text-center ${!isScramble ? 'text-danger' : 'text-success'}`}>
+                {isScramble ? texts.passed : texts.failed}
+              </div>
+            )}
+
+            {(errorMessage && errorMessage.length > 0) && (
+              <div className="mt-2 mb-3 text-center text-danger">
+                {errorMessage}
+              </div>
+            )}
 
             <div className="d-flex justify-content-center">
               <button className="btn btn-primary" onClick={handleStringCheck}>Check strings</button>
