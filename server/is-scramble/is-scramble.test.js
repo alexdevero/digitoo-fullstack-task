@@ -1,4 +1,4 @@
-const isScramble = require('./utils')
+const isScramble = require('./is-scramble')
 
 test('check if "rekqodlw" and "world" is scramble', () => {
   expect(isScramble('rekqodlw', 'world')).toBe(true)

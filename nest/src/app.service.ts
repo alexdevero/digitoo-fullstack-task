@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { isScramble } from './utils/utils'
+import { isScramble } from './is-scramble/is-scramble'
 
 @Injectable()
 export class AppService {

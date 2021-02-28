@@ -1,6 +1,6 @@
 const express = require('express')
 
-const isScramble = require('./../utils/utils')
+const isScramble = require('./../is-scramble/is-scramble')
 
 const router = express.Router()
 
